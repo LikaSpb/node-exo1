@@ -1,5 +1,7 @@
-// EXO 2
 const fs = require("fs");
+
+// Ajouter les étudiants
+fs.appendFileSync("students.txt", "\n18 SONIA Paris\n17 CLARISSE Marseille");
 
 try {
   const data = fs.readFileSync("students.txt", "utf8");
@@ -21,8 +23,9 @@ fs.readFile("students.txt", "utf8", (err, data) => {
     if (line) {
       const [grade, name] = line.split(" ");
       const parsedGrade = parseFloat(grade);
+      const uppercaseName = name.toUpperCase(); // mettre chaque nom en majuscule
       if (parsedGrade > 17) {
-        students.push({ name, grade: parsedGrade });
+        students.push({ name: uppercaseName, grade: parsedGrade });
       }
     }
   });
