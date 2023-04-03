@@ -1,3 +1,5 @@
+// EXO 1
+
 const secretNumber = Math.floor(Math.random() * 100) + 1;
 let attempts = 10;
 
@@ -16,7 +18,8 @@ process.stdin.on("data", (input) => {
       if (attempts === 0) {
         console.log(
           `Désolé, vous n'avez plus de tentatives. Le nombre secret était ${secretNumber}.
-        `);
+        `
+        );
         process.exit();
       } else {
         console.log(
